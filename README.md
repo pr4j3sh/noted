@@ -1,16 +1,16 @@
-# React + Firebase
+# noted
 
-This is a reactjs + firebase template, with react-router-dom, tailwindcss, oauth and email-password authentication, crud operations with firebase firestore and redux-toolkit for state management.
+> notes app
+
+Take notes with noted.
 
 ## Getting Started
 
-- Use this template via `@pr4j3sh/frames` npm package:
+- Clone the repository
 
 ```bash
-npm create @pr4j3sh/frames@latest react-firebase myapp
+git clone https://github.com/pr4j3sh/noted.git
 ```
-
-> You can replace `myapp` with the desired name of your choice.
 
 - Make sure to initialize environment variables in the `.env` file:
 
