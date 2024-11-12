@@ -86,8 +86,12 @@ input {
   @apply bg-gray-100 border border-gray-200 dark:border-gray-800 dark:bg-gray-900 px-2 py-1 rounded-md focus:outline-gray-400 dark:outline-gray-700 w-full;
 }
 
+textarea {
+  @apply bg-gray-100 border border-gray-200 dark:border-gray-800 dark:bg-gray-900 px-2 py-1 rounded-md focus:outline-gray-400 dark:outline-gray-700 w-full;
+}
+
 section {
-  @apply flex flex-col gap-2;
+  @apply flex flex-col gap-4;
 }
 
 .card {

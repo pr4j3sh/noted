@@ -1,9 +1,9 @@
-export default function Footer() {
+export default function Footer({ author }) {
   return (
     <footer>
       <p>
-        <a href="https://pr4j3sh.vercel.app/" target="_blank">
-          pr4j3sh
+        <a href={author?.URL} target="_blank">
+          {author?.USERNAME}
         </a>
       </p>
     </footer>

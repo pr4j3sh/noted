@@ -1,7 +1,13 @@
 export const SITE = {
-  TITLE: "React + Firebase",
-  DESCRIPTION:
-    "React + Firebase template with auth, tailwind css and lot more cool features.",
-  URL: "https://github.com/pr4j3sh/react-firebase",
-  REPO: "react-firebase",
+  TITLE: "noted",
+  DESCRIPTION: "Take notes with noted",
+  URL: "https://github.com/pr4j3sh/noted",
+  REPO: "noted",
+};
+
+export const AUTHOR = {
+  NAME: "Prajesh Pratap Singh",
+  USERNAME: "pr4j3sh",
+  EMAIL: "prajesh.eleven118@gmail.com",
+  URL: "https://pr4j3sh.vercel.app/",
 };

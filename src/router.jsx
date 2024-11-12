@@ -7,6 +7,8 @@ import Dashboard from "./pages/dashboard";
 import Protected from "./components/protected";
 import Root from "./layouts/root";
 import NotFound from "./pages/not-found";
+import Profile from "./pages/profile";
+import DashboardLayout from "./layouts/dashboard-layout";
 
 export const router = createBrowserRouter([
   {
@@ -35,7 +37,25 @@ export const router = createBrowserRouter([
         path: "dashboard",
         element: (
           <Protected>
-            <Dashboard />
+            <DashboardLayout />
+          </Protected>
+        ),
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
+      },
+      {
+        path: "profile",
+        element: (
+          <Protected>
+            <Profile />
           </Protected>
         ),
       },
