@@ -4,6 +4,12 @@
 
 Take notes with noted.
 
+## Features
+
+- Create, view, edit, delete notes.
+- Search by title(case-sensitive).
+- User Authentication by Email and Google
+
 ## Getting Started
 
 - Clone the repository
