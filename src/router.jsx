@@ -9,6 +9,9 @@ import Root from "./layouts/root";
 import NotFound from "./pages/not-found";
 import Profile from "./pages/profile";
 import DashboardLayout from "./layouts/dashboard-layout";
+import Create from "./components/create";
+import Update from "./components/update";
+import View from "./pages/view";
 
 export const router = createBrowserRouter([
   {
@@ -49,15 +52,19 @@ export const router = createBrowserRouter([
             path: "profile",
             element: <Profile />,
           },
+          {
+            path: "create",
+            element: <Create />,
+          },
+          {
+            path: "edit/:id",
+            element: <Update />,
+          },
+          {
+            path: "view/:id",
+            element: <View />,
+          },
         ],
-      },
-      {
-        path: "profile",
-        element: (
-          <Protected>
-            <Profile />
-          </Protected>
-        ),
       },
     ],
   },

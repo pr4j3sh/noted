@@ -23,7 +23,7 @@ export default function Profile() {
         <p>Welcome to your Profile.</p>
       </section>
       <span>
-        <button className="secondary" onClick={handleLogout}>
+        <button className="danger" onClick={handleLogout}>
           Logout
         </button>
       </span>

@@ -1,15 +1,17 @@
-import Create from "./create";
-import Delete from "./delete";
+import { Link } from "react-router-dom";
 import Read from "./read";
-import Update from "./update";
 
 export default function Crud() {
   return (
     <>
-      <Create />
+      <nav>
+        <h3>My Notes</h3>
+        <Link to={"create"}>
+          <button>Create</button>
+        </Link>
+      </nav>
+
       <Read />
-      <Update />
-      <Delete />
     </>
   );
 }

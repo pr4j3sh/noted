@@ -1,9 +1,12 @@
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../lib/firebase";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function Create() {
+  const nav = useNavigate();
+
   const values = {
     author: "",
     title: "",
@@ -16,11 +19,14 @@ export default function Create() {
     e.preventDefault();
     try {
       formData.author = user;
+      formData.createdAt = serverTimestamp();
+      formData.updatedAt = serverTimestamp();
       console.log(formData);
 
       await addDoc(collection(db, "notes"), formData);
 
       setFormData(values);
+      nav("/dashboard");
     } catch (error) {
       console.error(error);
     }
@@ -38,7 +44,7 @@ export default function Create() {
           type="text"
           name="title"
           placeholder="Note title"
-          value={formData.text}
+          value={formData.title}
           onChange={handleChange}
           required
         />

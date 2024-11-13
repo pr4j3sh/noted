@@ -97,14 +97,8 @@ section {
 .card {
   @apply border border-gray-200 dark:border-gray-800 rounded-md p-4 flex flex-col gap-4 bg-gray-100 dark:bg-gray-900;
 }
-
-table {
-  @apply border-collapse border w-full;
-}
-
-th,
-td {
-  @apply border px-4 py-2 text-left;
+.dropdown {
+  @apply absolute right-0 mt-2 w-32 border border-gray-200 dark:border-gray-800 rounded-md p-0.5 flex flex-col gap-0.5 bg-gray-100 dark:bg-gray-900;
 }
 
 footer {

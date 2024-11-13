@@ -1,4 +1,10 @@
-import { getDocs, collection } from "firebase/firestore";
+import {
+  collection,
+  where,
+  query,
+  onSnapshot,
+  orderBy,
+} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { db } from "../lib/firebase";
 import { useSelector } from "react-redux";
@@ -9,24 +15,27 @@ export default function Read() {
   const user = useSelector((state) => state.user.uid);
 
   useEffect(() => {
-    async function getTexts() {
-      const res = await getDocs(collection(db, "notes"));
-      const data = res.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
+    const unsubscribe = onSnapshot(
+      query(
+        collection(db, "notes"),
+        where("author", "==", user),
+        orderBy("updatedAt", "desc"),
+      ),
+      (snapshot) => {
+        const data = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        console.log(data);
+        setTexts(data);
+      },
+    );
 
-      const texts = data.filter((doc) => doc.author === user);
-
-      setTexts(texts);
-    }
-
-    getTexts();
+    return () => unsubscribe();
   }, [user]);
 
   return (
     <>
-      <p className="font-bold">Notes</p>
       {texts.length > 0 ? (
         texts.map((text) => <NoteCard key={text?.id} note={text} />)
       ) : (
